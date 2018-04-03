@@ -8,7 +8,7 @@ explode_rtf.py
 Installation:
 1. Add explode_rtf.py to modules folder
 2. Modify dispatch.yara to include the module:
-     
+```     
 rule type_is_rtf
 {
     meta:
@@ -17,4 +17,4 @@ rule type_is_rtf
     condition:
         uint32(0) == 0x74725c7b
 }
-
+```
