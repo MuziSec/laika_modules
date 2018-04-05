@@ -30,10 +30,10 @@ class EXPLODE_DOTNET(SI_MODULE):
         moduleResult = []
         success = "Decompiled dotnet results available in dir: \n"
         try:
-            outfile = "output/%s/decompiled_%s/" % (scanObject.rootUID, scanObject.objectHash)
+            outfile = "<insert_output_dir>/%s/decompiled_%s/" % (scanObject.rootUID, scanObject.objectHash)
             filename = "e_decompiled_dotnet_%s" % md5.new(scanObject.filename).hexdigest()
             outname = "decompiled_%s/\n" % scanObject.objectHash
-            subprocess.check_output(['mono','/home/muzi/Tools/dnSpy/dnSpy.Console.exe','--no-resx', '--no-sln', scanObject.filename, '-o', outfile])
+            subprocess.check_output(['mono','<path_to_exe>/dnSpy.Console.exe','--no-resx', '--no-sln', scanObject.filename, '-o', outfile])
             moduleResult.append(ModuleObject(buffer=success + outname,externalVars=ExternalVars(filename=filename)))
         except ScanError:
             raise
