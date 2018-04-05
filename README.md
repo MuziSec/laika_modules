@@ -25,6 +25,7 @@ explode_dotnet.py
 
 Dependency:
 1. Install Mono
+2. Download dnSpy
 
 Installation:
 1. Add explode_dotnet.py to modules folder
